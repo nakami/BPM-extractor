@@ -137,7 +137,7 @@ if __name__ == '__main__':
         if last_bpm != bpm_value:
             last_bpm = bpm_value
             
-            print "(Time, BPM): %.2f, %.2f"% (time_value, bpm_value)
+            print "%d,%d,4,2,1,80,1,0"% (time_value*1000, 1000.0/(bpm_value/60))
 
         bpms[window_ndx] = bpm
         correl = correl_temp
@@ -146,11 +146,11 @@ if __name__ == '__main__':
         samps_ndx = samps_ndx+window_samps;
         #n=n+1; #counter for debug...
 
-    bpm = numpy.median(bpms)
-    print 'Completed.  Estimated Beats Per Minute:', bpm
+    # bpm = numpy.median(bpms)
+    # print 'Completed.  Estimated Beats Per Minute:', bpm
     
-    n = range(0,len(correl))
-    plt.plot(n,abs(correl)); 
-    plt.show(False); #plot non-blocking
-    time.sleep(10);
-    plt.close();
+    # n = range(0,len(correl))
+    # plt.plot(n,abs(correl)); 
+    # plt.show(False); #plot non-blocking
+    # time.sleep(10);
+    # plt.close();
